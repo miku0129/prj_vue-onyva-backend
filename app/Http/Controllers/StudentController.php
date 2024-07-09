@@ -22,6 +22,19 @@ class StudentController extends Controller
         return response()->json($data, 200); 
     }
 
+    public function get_a($id)    {
+            $student = Student::find($id); 
+
+            $data=[
+                'status'=>200, 
+                'student'=>[$student->name, $student->email, $student->phone]
+            ];
+
+            return response()->json($data, 200);
+
+    }
+
+
     public function upload(Request $request)
     {
         $validator = Validator::make($request->all(), 
