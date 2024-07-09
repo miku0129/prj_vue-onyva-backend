@@ -27,7 +27,7 @@ class StudentController extends Controller
 
             $data=[
                 'status'=>200, 
-                'student'=>[$student->name, $student->email, $student->phone]
+                'student'=>["name"=>$student->name, "email"=>$student->email, "phone"=>$student->phone]
             ];
 
             return response()->json($data, 200);
