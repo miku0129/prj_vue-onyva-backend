@@ -13,19 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/api/student/1', function () {
-    return response()->json([
-            "name"=>"test2",
-            "email"=>"test2@email.com",
-            "phone"=>null,    
-    ]);
+Route::get('/test', function () {
+    return view('welcome');
 });
-
-
-// Route::post('/api/student', function () {
-//     return view('welcome');
-// });
