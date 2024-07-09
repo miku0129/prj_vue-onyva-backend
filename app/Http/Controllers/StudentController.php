@@ -50,11 +50,11 @@ class StudentController extends Controller
             $student->save(); 
 
             $data=[
-                'status'=>200, 
+                'status'=>201, 
                 'message'=>'Data uploaded successfully'
             ];
 
-            return response()->json($data, 200);
+            return response()->json($data, 201);
 
         }
     }
