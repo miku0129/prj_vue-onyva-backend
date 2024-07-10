@@ -8,11 +8,6 @@ use Tests\TestCase;
 
 class EtudiantTest extends TestCase
 {
-//     public function setUp(): void
-//     {
-//         $this->post('/api/student/', ['name'=>'
-//         test_etudiant', 'email'=>'test_etudiant@mail.com']);
-// }    
     
     public function 
     test_getAll_request_return_resuponse_successfuly(): void
@@ -29,7 +24,6 @@ class EtudiantTest extends TestCase
         $response->assertJsonFragment([
                 "id"=>1,
                 "name"=>"etudiant1",
-
             ]
         );
     }
@@ -43,11 +37,8 @@ class EtudiantTest extends TestCase
             "status"=>201,
             "message"=>"Data uploaded successfully"       
         ]);
-
-
     }
 
-        
     public function test_put_request_return_resuponse_successfuly(): void
     {
         $response = $this->put('/api/etudiant/edit/2', ['name'=>'
@@ -61,7 +52,7 @@ class EtudiantTest extends TestCase
 
     public function test_delete_request_return_resuponse_successfuly(): void
     {
-        $response = $this->delete('/api/etudiant/delete/11');
+        $response = $this->delete("/api/etudiant/delete/16");
 
         $response
             ->assertStatus(200)
@@ -70,15 +61,4 @@ class EtudiantTest extends TestCase
                 "message"=>"data deleted successfully" 
             ]);
     }
-        
-
-//     public function setUp(): void
-//     {
-        
-//         $response = $this->get('/api/etudiant/1');
-//         $id = $response->id; 
-//         $this->post('etudiant/delete/{$id}', ['name'=>'
-//         test_etudiant', 'email'=>'test_etudiant@mail.com']);
-// }    
-
 }
