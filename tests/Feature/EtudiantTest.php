@@ -48,20 +48,20 @@ class EtudiantTest extends TestCase
     }
 
         
-    // public function test_put_request_return_resuponse_successfuly(): void
-    // {
-    //     $response = $this->put('/api/student/edit/2', ['name'=>'
-    //     sample-modified', 'email'=>'sample-modified@email.com']);
+    public function test_put_request_return_resuponse_successfuly(): void
+    {
+        $response = $this->put('/api/etudiant/edit/2', ['name'=>'
+        sample-modified', 'email'=>'sample-modified@email.com']);
 
-    //     $response->assertJson([
-    //         "status"=>200,
-    //         "message"=>"Data updated successfully"       
-    //     ]);
-    // }
+        $response->assertJson([
+            "status"=>200,
+            "message"=>"Data updated successfully"       
+        ]);
+    }
 
     public function test_delete_request_return_resuponse_successfuly(): void
     {
-        $response = $this->delete('/api/etudiant/delete/7');
+        $response = $this->delete('/api/etudiant/delete/11');
 
         $response
             ->assertStatus(200)

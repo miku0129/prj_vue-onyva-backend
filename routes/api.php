@@ -28,7 +28,7 @@ Route::get('etudiant/{id}', [EtudiantController::class,'get_a']);
 
 Route::post('etudiant', [EtudiantController::class,'upload']);
 
-// Route::put('etudiant/edit/{id}', [EtudiantController::class,'edit']);
+Route::put('etudiant/edit/{id}', [EtudiantController::class,'edit']);
 
 Route::delete('etudiant/delete/{id}', [EtudiantController::class,'delete']);
 

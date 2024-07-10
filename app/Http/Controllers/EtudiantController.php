@@ -81,41 +81,43 @@ class EtudiantController extends Controller
         }
     }
 
-    // public function edit(Request $request,$id)    {
-    //     $validator = Validator::make($request->all(), 
-    //     [
-    //         'name'=>'required',
-    //         'email'=>'required|email'
-    //     ]);
+    public function edit(Request $request,$id)    {
+        $validator = Validator::make($request->all(), 
+        [
+            'name'=>'required',
+            'email'=>'required|email'
+        ]);
 
-    //     if($validator->fails())
-    //     {
-    //         $data=[
-    //             'status'=>422, 
-    //             'message'=>$validator->messages()
-    //         ];
-    //         return response()->json($data, 422); 
-    //     }
+        if($validator->fails())
+        {
+            $data=[
+                'status'=>422, 
+                'message'=>$validator->messages()
+            ];
+            return response()->json($data, 422); 
+        }
 
-    //     else 
-    //     {
-    //         $student = Student::find($id); 
+        else 
+        {
+            $etudiant = Etudiant::find($id); 
 
-    //         $student->name=$request->name; 
-    //         $student->email=$request->email; 
-    //         $student->phone=$request->phone; 
+            $etudiant->name=$request->name; 
+            $etudiant->email=$request->email; 
+            $etudiant->fromWhen=$request->fromWhen; 
+            $etudiant->myGoal=$request->myGoal; 
+            $etudiant->myMethod=$request->myMethod; 
 
-    //         $student->save(); 
+            $etudiant->save(); 
 
-    //         $data=[
-    //             'status'=>200, 
-    //             'message'=>'Data updated successfully'
-    //         ];
+            $data=[
+                'status'=>200, 
+                'message'=>'Data updated successfully'
+            ];
 
-    //         return response()->json($data, 200);
+            return response()->json($data, 200);
 
-    //     }
-    // }
+        }
+    }
 
     public function delete($id)
     {
