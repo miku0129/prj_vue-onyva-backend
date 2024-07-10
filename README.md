@@ -5,7 +5,9 @@
     * Use artisan and postman for testing code.
 
 * Use OVH for production.
-    * Use FileZilla and phpMyAdmin for production development. 
+    * Use FileZilla and phpMyAdmin for production development.
+    * I chose OVH because it's GDPR compartible.
+    * I separated Frontend and Backend for enchancing security.  
 
 # API 
 
