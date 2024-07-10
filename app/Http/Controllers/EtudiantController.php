@@ -22,55 +22,64 @@ class EtudiantController extends Controller
         return response()->json($data, 200); 
     }
 
-    // public function get_a($id)    {
-    //         $student = Student::find($id); 
+    public function get_a($id)    {
+            $etudiant = Etudiant::find($id); 
 
-    //         $data=[
-    //             'status'=>200, 
-    //             'student'=>["name"=>$student->name, "email"=>$student->email, "phone"=>$student->phone]
-    //         ];
+            $data=[
+                'status'=>200, 
+                'etudiant'=>[
+                "id"=>$etudiant->id, 
+                "name"=>$etudiant->name, "email"=>$etudiant->email,         
+                "fromWhen"=>$etudiant->fromWhen, 
+                "myGoal"=>$etudiant->myGoal,
+                "myMethod"=>$etudiant->myMethod,
+        ]
+            ];
 
-    //         return response()->json($data, 200);
+            return response()->json($data, 200);
 
-    // }
+    }
 
 
-    // public function upload(Request $request)
-    // {
-    //     $validator = Validator::make($request->all(), 
-    //     [
-    //         'name'=>'required',
-    //         'email'=>'required|email'
-    //     ]);
+    public function upload(Request $request)
+    {
+        $validator = Validator::make($request->all(), 
+        [
+            'name'=>'required',
+            'email'=>'required|email',
+        ]);
 
-    //     if($validator->fails())
-    //     {
-    //         $data=[
-    //             'status'=>422, 
-    //             'message'=>$validator->messages()
-    //         ];
-    //         return response()->json($data, 422); 
-    //     }
+        if($validator->fails())
+        {
+            $data=[
+                'status'=>422, 
+                'message'=>$validator->messages()
+            ];
+            return response()->json($data, 422); 
+        }
 
-    //     else 
-    //     {
-    //         $student = new Student; 
+        else 
+        {
+            $etudiant = new Etudiant; 
 
-    //         $student->name=$request->name; 
-    //         $student->email=$request->email; 
-    //         $student->phone=$request->phone; 
+            $etudiant->name=$request->name; 
+            $etudiant->email=$request->email; 
+            $etudiant->fromWhen=$request->fromWhen; 
+            $etudiant->myGoal=$request->myGoal; 
+            $etudiant->myMethod=$request->myMethod; 
 
-    //         $student->save(); 
+            $etudiant->save(); 
 
-    //         $data=[
-    //             'status'=>201, 
-    //             'message'=>'Data uploaded successfully'
-    //         ];
+            $data=[
+                'status'=>201, 
+                'message'=>'Data uploaded successfully',
+                'id'=>$etudiant->id 
+            ];
 
-    //         return response()->json($data, 201);
+            return response()->json($data, 201);
 
-    //     }
-    // }
+        }
+    }
 
     // public function edit(Request $request,$id)    {
     //     $validator = Validator::make($request->all(), 
@@ -108,19 +117,19 @@ class EtudiantController extends Controller
     //     }
     // }
 
-    // public function delete($id)
-    // {
-    //     $student=Student::find($id); 
+    public function delete($id)
+    {
+        $etudiant=Etudiant::find($id); 
 
-    //     $student->delete(); 
+        $etudiant->delete(); 
 
-    //     $data=
-    //     [
-    //         'status'=>200, 
-    //         'message'=>'data deleted successfully'
-    //     ];
+        $data=
+        [
+            'status'=>200, 
+            'message'=>'data deleted successfully'
+        ];
 
-    //     return response()->json($data, 200); 
-    // }
+        return response()->json($data, 200); 
+    }
 
 }

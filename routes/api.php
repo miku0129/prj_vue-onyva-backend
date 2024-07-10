@@ -24,14 +24,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('etudiant', [EtudiantController::class,'index']);
 
-// Route::get('user/{id}', [UserController::class,'get_a']);
+Route::get('etudiant/{id}', [EtudiantController::class,'get_a']);
 
+Route::post('etudiant', [EtudiantController::class,'upload']);
 
-// Route::post('user', [UserController::class,'upload']);
+// Route::put('etudiant/edit/{id}', [EtudiantController::class,'edit']);
 
-// Route::put('user/edit/{id}', [UserController::class,'edit']);
-
-// Route::delete('user/delete/{id}', [UserController::class,'delete']);
+Route::delete('etudiant/delete/{id}', [EtudiantController::class,'delete']);
 
 //###############################
 // Route::get('student', [StudentController::class,'index']);
