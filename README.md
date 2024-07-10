@@ -13,11 +13,11 @@
 
 * Made sample API for CRUD functionality.
 * GET
-    * Get all student: https://app.msano.ovh/www/api/student
-    * Get one student: https://app.msano.ovh/www/api/student/{id}
+    * Get all student: https://app.msano.ovh/www/api/etudiant
+    * Get one student: https://app.msano.ovh/www/api/etudiant/{id}
 * Post
-    * Create a student: https://app.msano.ovh/www/api/student
+    * Create a student: https://app.msano.ovh/www/api/etudiant
 * PUT
-    * Update a student: https://app.msano.ovh/www/api/student/edit/{id}
+    * Update a student: https://app.msano.ovh/www/api/etudiant/edit/{id}
 * DELETE
-    * Delete a student: http://laragon1.test/api/student/delete/{id}
+    * Delete a student: https://app.msano.ovh/www/api/etudiant/delete/{id}
