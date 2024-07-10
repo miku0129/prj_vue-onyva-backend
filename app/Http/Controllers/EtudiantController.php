@@ -4,23 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Student; 
+use App\Models\Etudiant; 
 
 use Validator;
 
-class UserController extends Controller
+class EtudiantController extends Controller
 {
     public function index()
     {
-        // $user = User::all(); 
+        $etudiant = Etudiant::all(); 
 
-        // $data = [
-        //     'status'=>200, 
-        //     'user'=>$user
-        // ]; 
+        $data = [
+            'status'=>200, 
+            'etudiant'=>$etudiant
+        ]; 
 
-        // return response()->json($data, 200); 
-        return response()->json(["hello php"], 200); 
+        return response()->json($data, 200); 
     }
 
     // public function get_a($id)    {
