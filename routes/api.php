@@ -2,7 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\StudentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +22,25 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('student', [StudentController::class,'index']);
+Route::get('user', [UserController::class,'index']);
 
-Route::get('student/{id}', [StudentController::class,'get_a']);
+// Route::get('user/{id}', [UserController::class,'get_a']);
 
 
-Route::post('student', [StudentController::class,'upload']);
+// Route::post('user', [UserController::class,'upload']);
 
-Route::put('student/edit/{id}', [StudentController::class,'edit']);
+// Route::put('user/edit/{id}', [UserController::class,'edit']);
 
-Route::delete('student/delete/{id}', [StudentController::class,'delete']);
+// Route::delete('user/delete/{id}', [UserController::class,'delete']);
+
+//###############################
+// Route::get('student', [StudentController::class,'index']);
+
+// Route::get('student/{id}', [StudentController::class,'get_a']);
+
+
+// Route::post('student', [StudentController::class,'upload']);
+
+// Route::put('student/edit/{id}', [StudentController::class,'edit']);
+
+// Route::delete('student/delete/{id}', [StudentController::class,'delete']);
