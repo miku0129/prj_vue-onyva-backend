@@ -12,11 +12,11 @@ class EtudiantController extends Controller
 {
     public function index()
     {
-        $etudiant = Etudiant::all(); 
+        $etudiants = Etudiant::all(); 
 
         $data = [
             'status'=>200, 
-            'etudiant'=>$etudiant
+            'etudiants'=>$etudiants
         ]; 
 
         return response()->json($data, 200); 
@@ -71,9 +71,9 @@ class EtudiantController extends Controller
             $etudiant->save(); 
 
             $data=[
+                'id'=>$etudiant->id, 
                 'status'=>201, 
                 'message'=>'Data uploaded successfully',
-                'id'=>$etudiant->id 
             ];
 
             return response()->json($data, 201);
